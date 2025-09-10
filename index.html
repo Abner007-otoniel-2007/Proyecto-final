@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .profile-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .profile-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: #fff;
+        }
+        .profile-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        #user-btn {
+            background-color: #007bff;
+        }
+        #busero-btn {
+            background-color: #28a745;
+        }
+
+            video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Asegura que el video cubra toda el área */
+      z-index: -1; /* Coloca el video detrás del contenido */
+    }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop>
+  <source src="transporte.mp4" type="video/mp4"> 
+
+</video>
+
+<div class="container">
+    <h1>¿Cómo te gustaría acceder?</h1>
+    <div class="profile-buttons">
+        <button id="user-btn" class="profile-btn" onclick="seleccionarPerfil('usuario')">Usuario</button>
+        <button id="busero-btn" class="profile-btn" onclick="seleccionarPerfil('busero')">Busero</button>
+    </div>
+</div>
+
+<script>
+    function seleccionarPerfil(perfil) {
+        
+
+         if (perfil === 'usuario') {
+             window.location.href = "formulario-usuario.html";
+         } else if (perfil === 'busero') {
+             window.location.href = "formulario-busero.html";
+         }
+    }
+</script>
+
+</body>
+</html>
